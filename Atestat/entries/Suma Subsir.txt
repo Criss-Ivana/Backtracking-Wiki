@@ -1,0 +1,50 @@
+https://onecompiler.com/embed/cpp/434kj8s8v
+
+# Subșir cu Suma Dată - Rezolvare cu Backtracking
+
+Acest program determină toate subșirurile unei liste de numere care au suma egală cu o valoare specificată, utilizând tehnica **backtracking**.
+
+---
+
+## Structura Codului
+
+### Variabile Globale
+- `n`: Numărul de elemente din lista inițială.
+- `s`: Suma țintă pentru subșiruri.
+- `sir`: Lista inițială cu elementele introduse de utilizator.
+- `subsir`: Lista curentă folosită pentru a construi subșirurile.
+- `solutie`: Variabilă booleană care indică dacă cel puțin o soluție a fost găsită.
+
+---
+
+## Funcționalități
+
+### 1. Afișarea unei Soluții
+Funcția `Afisare`:
+- Afișează elementele din `subsir`, care reprezintă un subșir valid cu suma egală cu `s`.
+- Setează variabila `solutie` pe `true`.
+
+### 2. Generarea Subșirurilor
+Funcția `SubsirSuma_back`:
+- Este o implementare recursivă a algoritmului **backtracking**.
+- Explorează toate combinațiile posibile de elemente din `sir`:
+  - Include sau exclude elementul curent în subșir.
+  - Dacă suma țintă `s` este atinsă, apelează funcția `Afisare`.
+
+---
+
+## Etapele Programului
+
+1. **Citirea Datelor de Intrare**:
+   - Se citește `n`, numărul de elemente din lista inițială.
+   - Se citește `s`, suma țintă.
+   - Se introduc cele `n` elemente în lista `sir`.
+
+2. **Căutarea Soluțiilor**:
+   - Se apelează funcția `SubsirSuma_back(1, s, subsir)` pentru a genera și verifica toate subșirurile.
+
+3. **Afișarea Rezultatelor**:
+   - Dacă există soluții, acestea sunt afișate.
+   - Dacă nu există soluții, se afișează mesajul: `Nu exista solutie!`.
+
+---

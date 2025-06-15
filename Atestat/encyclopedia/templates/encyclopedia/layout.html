@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="{% static 'encyclopedia/styles.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="row">
+            <div class="sidebar col-lg-2 col-md-3">
+                {% block nav %}
+                {% endblock %}
+                <h2 class="main-header">Backtracking</h2>
+                <hr style="opacity: 0;">
+                <form action="{% url 'pages:index' %}" method="post">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                </form>
+                <div class="main-cont">
+                <div class="ftr-cont">
+                    <a href="{% url 'pages:index' %}" class="feature_link">Acasa</a>
+                </div>
+                <div class="ftr-cont">
+                    <a href="{% url 'pages:wikipage' entry=random_page %}" class="feature_link">Problema Aleatorie</a>
+                </div>
+            </div>
+            </div>
+            <div class="main col-lg-10 col-md-9">
+                {% block body %}
+                {% endblock %}
+            </div>
+        </div>
+
+    </body>
+</html>

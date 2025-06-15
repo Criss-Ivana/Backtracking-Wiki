@@ -1,0 +1,23 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <div class="index-cont">
+        <h1 class="mod-txt" style="margin-left: 5%;">Probleme</h1>
+        <hr>
+        <ul class="list">
+            {% if entry_search %}
+                {% for entry in search_list %}
+                    <li class="list-item"><a class="pg-link" href="{% url 'pages:wikipage' entry=entry %}">{{ entry }}</a></li>
+                {% endfor %}
+            {% else %}
+                {% for entry in entries %}
+                    <li class="list-item"><a class="pg-link" href="{% url 'pages:wikipage' entry=entry %}">{{ entry }}</a></li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,56 @@
+https://onecompiler.com/embed/cpp/434kmdecy
+
+# Plasarea Dreptunghiurilor pe o Plasă
+
+Acest cod determină configurația optimă pentru plasarea unui număr dat de dreptunghiuri într-o suprafață dreptunghiulară, maximizând suprafața ocupată. Algoritmul utilizează tehnica de **backtracking** pentru a încerca toate posibilitățile.
+
+---
+
+## Structura Codului
+
+### Structura `dreptunghi`
+Reprezintă un dreptunghi cu următoarele atribute:
+- `ap`: Dacă dreptunghiul este plasat pe suprafață (1 pentru plasat, 0 pentru neplasat).
+- `x, y`: Coordonatele din colțul stânga-sus al dreptunghiului.
+- `lungime, latime`: Dimensiunile dreptunghiului.
+
+---
+
+## Variabile Globale
+- `st`: Lista dreptunghiurilor disponibile.
+- `st_solutie`: Lista dreptunghiurilor în configurația optimă.
+- `n`: Numărul de dreptunghiuri.
+- `L, l`: Dimensiunile suprafeței.
+- `smax`: Cea mai mare suprafață ocupată găsită până acum.
+
+---
+
+## Funcționalități
+
+### 1. Citirea Datelor
+Funcția `citire`:
+- Citește numărul de dreptunghiuri `n` și dimensiunile suprafeței `L` și `l`.
+- Încarcă dreptunghiurile în lista `st`.
+
+### 2. Verificarea Validității unei Configurații
+Funcția `OK`:
+- Verifică dacă un dreptunghi poate fi plasat pe suprafață fără a depăși limitele sau a se intersecta cu alte dreptunghiuri.
+
+### 3. Generarea Soluțiilor
+Funcția `back`:
+- Utilizează **backtracking** pentru a încerca toate configurațiile posibile.
+- Plasează dreptunghiurile în diferite poziții și orientează dimensiunile.
+- Apelează funcția `Solutie` dacă toate dreptunghiurile au fost procesate.
+
+### 4. Actualizarea Soluției Optime
+Funcția `Solutie`:
+- Calculează suprafața ocupată de configurația curentă.
+- Salvează configurația dacă aceasta ocupă o suprafață mai mare decât soluția anterioară.
+
+### 5. Afișarea Soluțiilor
+Funcția principală `main`:
+- Repetă procesul până când toate dreptunghiurile sunt plasate.
+- Afișează configurația optimă pentru fiecare iterație și elimină dreptunghiurile plasate din lista de intrare.
+
+---
+

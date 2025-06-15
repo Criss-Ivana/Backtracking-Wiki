@@ -1,0 +1,60 @@
+https://onecompiler.com/embed/cpp/434kks2bh
+
+# Problema Turului Calului - Rezolvare cu Backtracking
+
+Acest program rezolvă problema **Turului Calului** folosind tehnica **backtracking**. Scopul este de a găsi un parcurs valid al calului pe o tablă de șah de dimensiune `n x n` astfel încât fiecare pătrățică să fie vizitată o singură dată.
+
+---
+
+## Structura Codului
+
+### Funcții
+
+#### 1. `AfisareSolutie`
+- **Descriere**:
+  - Afișează soluția sub forma unei matrice, unde fiecare element indică ordinea în care calul a vizitat pătrățica.
+- **Parametri**:
+  - `sol`: Matricea de dimensiune `n x n` care conține soluția.
+
+#### 2. `Valid`
+- **Descriere**:
+  - Verifică dacă o poziție `(x, y)` este validă:
+    - Se află pe tablă.
+    - Nu a fost deja vizitată.
+- **Parametri**:
+  - `x`, `y`: Coordonatele poziției.
+  - `sol`: Matricea care reține pozițiile vizitate.
+
+#### 3. `PbCailor_back`
+- **Descriere**:
+  - Rezolvă problema folosind backtracking:
+    - Trecerea de la o poziție la alta este realizată folosind mișcările posibile ale calului.
+    - Dacă toate pătrățicile sunt vizitate (`pas == n * n`), funcția returnează succes.
+    - Dacă nicio soluție nu este posibilă, se revine la starea anterioară.
+- **Parametri**:
+  - `x`, `y`: Poziția curentă.
+  - `pas`: Numărul pașilor efectuați.
+  - `sol`: Matricea care reține soluția curentă.
+  - `xVector`, `yVector`: Vectoare care conțin mișcările posibile ale calului.
+
+---
+
+## Etapele Programului
+
+1. **Inițializare**:
+   - Se citește dimensiunea tablei `n`.
+   - Se inițializează matricea `sol` cu `-1` (indicând că pătrățica nu a fost vizitată).
+
+2. **Mișcările Calului**:
+   - Sunt definite prin vectorii `xVector` și `yVector`, care conțin toate cele 8 mișcări posibile ale calului:
+     - `(2,1)`, `(1,2)`, `(-1,2)`, `(-2,1)`, etc.
+
+3. **Apelarea Funcției Backtracking**:
+   - Se începe de la poziția `(0, 0)` și se marchează ca vizitată (`sol[0][0] = 0`).
+   - Dacă o soluție este găsită, aceasta este afișată.
+   - În caz contrar, se afișează un mesaj indicând că soluția nu există.
+
+4. **Afișarea Soluției**:
+   - Soluția este afișată sub forma unei matrice în care fiecare celulă indică ordinea vizitării.
+
+---

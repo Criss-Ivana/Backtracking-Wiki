@@ -1,0 +1,58 @@
+https://onecompiler.com/embed/cpp/434khqr4q
+
+# Rezolvarea Tablei Sudoku cu Backtracking
+
+Acest program rezolvă un joc **Sudoku** folosind tehnica **backtracking**. Tabla Sudoku este o matrice de dimensiune 9x9, iar programul determină o configurație validă care respectă regulile jocului.
+
+---
+
+## Structura Codului
+
+### Variabile Globale
+- `a[9][9]`: Matricea 9x9 care reprezintă tabla Sudoku. Valorile inițiale sunt introduse de utilizator.
+
+---
+
+## Funcționalități
+
+### 1. Afișarea Soluției
+Funcția `Solutie`:
+- Afișează tabla Sudoku completă.
+- Este apelată când se găsește o soluție validă.
+
+### 2. Verificarea Validității unei Poziții
+Funcția `PozitieValida`:
+- Determină dacă un număr poate fi plasat într-o anumită poziție `(l, c)` fără a încălca regulile jocului:
+  - Numărul nu trebuie să apară pe aceeași linie (`l`) sau coloană (`c`).
+  - Numărul nu trebuie să apară în sub-matricea de 3x3 corespunzătoare.
+
+### 3. Rezolvarea Tablei
+Funcția `Sudoku_back`:
+- Este o implementare recursivă a algoritmului de **backtracking**.
+- Explorează toate posibilitățile pentru fiecare poziție goală:
+  - Plasează numere de la 1 la 9 într-o poziție goală.
+  - Verifică dacă tabla rămâne validă.
+  - Dacă soluția curentă nu este validă, anulează ultima plasare și încearcă următoarea valoare.
+- Returnează soluția validă dacă aceasta există.
+
+### 4. Configurarea Tablei
+În funcția `main`:
+- Utilizatorul alege între două opțiuni:
+  1. Introducerea manuală a întregii table Sudoku.
+  2. Introducerea doar a valorilor cunoscute și a pozițiilor acestora.
+
+---
+
+## Etapele Programului
+
+1. **Citirea Datelor:**
+   Utilizatorul introduce tabla completă sau doar valorile cunoscute și pozițiile lor.
+   
+2. **Rezolvarea Sudoku-ului:**
+   Se apelează funcția `Sudoku_back` pentru a găsi o soluție validă.
+
+3. **Afișarea Rezultatelor:**
+   - Dacă soluția există, aceasta este afișată.
+   - Dacă nu există o soluție validă, se afișează un mesaj corespunzător.
+
+---

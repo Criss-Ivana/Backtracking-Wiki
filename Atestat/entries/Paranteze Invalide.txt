@@ -1,0 +1,46 @@
+https://onecompiler.com/embed/cpp/434kjz7zm
+
+# Generare a Tuturor Soluțiilor cu Paranteze Corecte
+
+Acest cod este utilizat pentru a genera toate configurațiile valide de paranteze prin eliminarea parantezelor invalide dintr-un șir dat. Este bazat pe tehnica de **backtracking** și utilizează un **stack** pentru verificarea validității parantezelor.
+
+---
+
+## Funcționalități
+
+### 1. Identificarea Parantezelor Invalide
+Funcția `NrCaractereInvalide` determină numărul de caractere invalide dintr-un șir:
+- Adaugă paranteza `(` în stivă.
+- Elimină o paranteză `(` din stivă dacă întâlnește `)`.
+- Dimensiunea finală a stivei reprezintă numărul de paranteze invalide.
+
+### 2. Generarea Soluțiilor Valide
+Funcția `ParantezeValide_back` utilizează **backtracking**:
+- Elimină pe rând parantezele invalide.
+- Continuă procesul până când șirul rezultat nu mai conține caractere invalide.
+- Soluțiile generate sunt salvate într-o listă globală `sol`, evitând duplicatele.
+
+### 3. Adăugarea Soluțiilor
+Funcția `Solutie` verifică dacă o soluție este deja în lista globală. Dacă nu există, aceasta este adăugată.
+
+---
+
+## Funcțiile Principale
+
+### `NrCaractereInvalide(string s)`
+Determină numărul de paranteze invalide dintr-un șir folosind un **stack**. Returnează dimensiunea stivei la final.
+
+### `ParantezeValide_back(string s, int invalid)`
+- Elimină pe rând caracterele invalide.
+- Dacă numărul de caractere invalide ajunge la 0, adaugă șirul în lista de soluții.
+
+### `Solutie(string s)`
+Adaugă șirul în lista de soluții dacă nu există deja.
+
+### `main()`
+1. Citește un șir de la utilizator.
+2. Determină numărul de caractere invalide.
+3. Dacă toate caracterele sunt invalide, afișează un mesaj de eroare.
+4. Altfel, generează și afișează toate soluțiile valide.
+
+---

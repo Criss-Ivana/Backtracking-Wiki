@@ -1,0 +1,38 @@
+https://onecompiler.com/embed/cpp/434kkfd3k
+
+# Generarea Permutărilor unui Șir - Rezolvare cu Backtracking
+
+Acest program generează toate permutările posibile ale unui șir de caractere utilizând tehnica **backtracking**.
+
+---
+
+## Structura Codului
+
+### Funcții
+
+#### 1. `PermutariSir_back`
+- **Parametri**:
+  - `k`: Indicele curent din șir care este fixat în cadrul permutării.
+  - `s`: Șirul de caractere pentru care se generează permutările.
+- **Funcționalitate**:
+  - Dacă indicele `k` este ultimul din șir, afișează permutarea curentă.
+  - Altfel:
+    - Iterează prin caracterele rămase din șir.
+    - Realizează un schimb între caracterul de pe poziția `k` și cel de pe poziția curentă `i`.
+    - Apelează recursiv funcția pentru poziția următoare (`k + 1`).
+    - Revine la configurația anterioară (restaurează ordinea șirului).
+
+---
+
+## Etapele Programului
+
+1. **Citirea Șirului**:
+   - Se citește un șir de caractere de la utilizator (maxim 9 caractere, incluzând terminatorul de șir `\0`).
+
+2. **Generarea Permutărilor**:
+   - Se apelează funcția `PermutariSir_back(0, s)` pentru a genera toate permutările posibile ale șirului.
+
+3. **Afișarea Rezultatelor**:
+   - Toate permutările sunt afișate, fiecare pe o linie separată.
+
+---

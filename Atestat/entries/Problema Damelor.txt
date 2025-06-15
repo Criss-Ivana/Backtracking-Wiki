@@ -1,0 +1,54 @@
+https://onecompiler.com/embed/cpp/434kgzmjm
+
+# Problema Damelor - Rezolvare cu Backtracking
+
+Acest program rezolvă **Problema Damelor** pentru o tablă de dimensiune `n x n` utilizând tehnica **backtracking**. Scopul este de a plasa `n` dame pe tablă astfel încât nici două să nu se atace reciproc.
+
+---
+
+## Structura Codului
+
+### Variabile Globale
+- `n`: Dimensiunea tablei (numărul de dame de plasat).
+- `a[100][100]`: Matricea care reprezintă tabla de șah. Valoarea `1` indică prezența unei dame, iar `0` indică o celulă liberă.
+- `solutie`: Contor pentru soluțiile găsite.
+
+---
+
+## Funcționalități
+
+### 1. Afișarea Soluției
+Funcția `Solutie`:
+- Incrementarea contorului de soluții.
+- Afișarea configurației curente a tablei pentru o soluție validă.
+
+### 2. Verificarea Validității unei Poziții
+Funcția `PozitieValida`:
+- Verifică dacă o damă poate fi plasată pe poziția `(l, c)` fără a fi atacată:
+  - Verifică coloana curentă.
+  - Verifică diagonala principală (stânga sus către dreapta jos).
+  - Verifică diagonala secundară (dreapta sus către stânga jos).
+
+### 3. Generarea Soluțiilor
+Funcția `ProblemaDamelor_back`:
+- Este o implementare recursivă a algoritmului **backtracking**.
+- Explorează toate pozițiile pentru fiecare linie `l`:
+  - Plasează o damă pe poziția validă.
+  - Continuă căutarea pentru linia următoare.
+  - Retrage plasarea damei dacă soluția curentă nu este validă.
+
+---
+
+## Etapele Programului
+
+1. **Citirea Dimensiunii Tablei**:
+   Utilizatorul introduce dimensiunea `n`.
+
+2. **Căutarea Soluțiilor**:
+   Se apelează funcția `ProblemaDamelor_back(0)` pentru a găsi toate soluțiile posibile.
+
+3. **Afișarea Rezultatelor**:
+   - Dacă există soluții, acestea sunt afișate.
+   - Dacă nu există soluții, se afișează mesajul: `Nu exista solutie!`.
+
+---

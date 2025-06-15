@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+{% block title %}{{entry}}{% endblock %}
+    {% block body %}
+        <hr>
+    <iframe
+ frameBorder="0"
+ height="450px"
+ src="{{link|safe}}" 
+ width="100%"
+ ></iframe>
+ <hr>
+ <div class="space" style="height: 60px;"></div>
+ {{ content|safe }}
+        
+
+    {% endblock %}
